@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #050505;
+  --color-bg-sidebar: #08080A;
+  --color-accent-primary: #818CF8;
+  --color-accent-secondary: #4F46E5;
+}
+
+@layer base {
+  body {
+    @apply antialiased transition-colors duration-300;
+    background-color: white;
+    color: #1a1a1a;
+  }
+  
+  .dark body {
+    background-color: var(--color-bg-main);
+    color: #cbd5e1; /* slate-300 */
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .glass-card {
+    @apply bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-2xl transition-all shadow-xl shadow-black/5 dark:shadow-none;
+  }
+  
+  .glass-input {
+    @apply bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full focus:outline-none focus:ring-1 focus:ring-accent-primary/50 transition-all text-slate-900 dark:text-white;
+  }
+  
+  .premium-gradient {
+    @apply bg-gradient-to-br from-indigo-600 to-violet-700;
+  }
+}
+
+:root {
+  --blue-primary: #818CF8;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+#root {
+  min-height: 100vh;
+}
